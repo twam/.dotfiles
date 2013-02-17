@@ -1,3 +1,8 @@
+zmodload zsh/regex
+
+# Check if were running OS X
+if [[ "$OSTYPE" -regex-match "^darwin[0-9.]*$" ]] then
+
 function pfd() {
   osascript 2>/dev/null <<EOF
     tell application "Finder"
@@ -43,3 +48,5 @@ function trash() {
   done
   IFS=$temp_ifs
 }
+
+fi
