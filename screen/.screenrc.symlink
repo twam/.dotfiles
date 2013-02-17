@@ -1,0 +1,6 @@
+startup_message off
+hardstatus alwayslastline "%{=b WR} %H %{= wk} %=[%l]%=%{-} %LD, %LM %d, %Y - %c:%s "
+caption always "%?%F%{= BY} %:%{= wK} %?%-Lw %{!r} %n%f %t %{-} %+Lw%=%? [%h]%?"
+
+defutf8 on
+
