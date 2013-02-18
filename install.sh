@@ -2,6 +2,14 @@
 #
 # Modeled after https://github.com/holman/dotfiles/blob/master/Rakefile
 
+GIT_VERSION_A=`git --version | sed -e 's/git version \([0-9]\+\)\.\([0-9]\+\)\.\([0-9]\+\).*/\1/'`
+GIT_VERSION_B=`git --version | sed -e 's/git version \([0-9]\+\)\.\([0-9]\+\)\.\([0-9]\+\).*/\2/'`
+GIT_VERSION_C=`git --version | sed -e 's/git version \([0-9]\+\)\.\([0-9]\+\)\.\([0-9]\+\).*/\3/'`
+
+if [ "$GIT_VERSION_A" -le "1" -a $GIT_VERSION_B -le "7" -a "$GIT_VERSION_C" -lt "10" ]; then
+    echo "Warning: You need at least git version 1.7.10 to support include.path!"
+fi
+
 symlinks=$(find . -name "*.symlink")
 
 overwrite_all=false
