@@ -13,12 +13,15 @@ defutf8 on
 
 # enable alternate screen support
 altscreen on
-# terminfo and termcap for nice 256 color terminal
+
+
 # allow bold colors - necessary for some reason
 attrcolor b ".I"
-# tell screen how to set colors. AB = background, AF=foreground
-termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 
+# terminfo and termcap for nice 256 color terminal
+# OS X's builtin screen doesn't support 256 colors! Install your own by 'brew install screen'
+termcapinfo xterm-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+term screen-256color
 
 # create window with ctrl-up
 bindkey "^[[1;5A" screen
