@@ -1,7 +1,7 @@
 # Search for Sublime on OS X
 if [[ -x /Applications/Sublime\ Text.app ]]
 then
-  alias subl=/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl
+  alias subl=/Applications/Sublime\\\ Text.app/Contents/SharedSupport/bin/subl
 fi
 
 # Search for Sublime on Linux
