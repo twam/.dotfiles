@@ -3,6 +3,10 @@ zmodload zsh/regex
 # Check if were running OS X
 if [[ "$OSTYPE" -regex-match "^darwin[0-9.]*$" ]] then
 
+# This setting is for the new UTF-8 terminal support
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 function pfd() {
   osascript 2>/dev/null <<EOF
     tell application "Finder"
