@@ -44,7 +44,7 @@ for file in $symlinks; do
             rm $target
         fi
 
-        if $backup  || $backup_all; then
+        if $backup || $backup_all; then
             mv $target "$HOME/$basename.backup"
         fi
     fi
@@ -52,3 +52,4 @@ for file in $symlinks; do
     echo "Installing $target"
     ln -s "$PWD/$file" "$target"
 done
+
