@@ -37,7 +37,7 @@ setopt CORRECT
 
 # Homebrew
 if which brew > /dev/null 2>&1; then
-  export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/sharepython:$PATH
+  export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/sharepython:/usr/local/share/npm/bin:$PATH
 fi
 
 export EDITOR=nano
