@@ -23,7 +23,8 @@ setopt MULTIOS
 
 # Automaticall cd into directories when typing their name
 setopt AUTO_CD
-setopt CDABLE_VARS
+# no search for directories starting with ~
+#setopt CDABLE_VARS
 
 setopt AUTO_PUSHD
 setopt AUTO_MENU
