@@ -9,9 +9,6 @@ compinit -i
 setopt GLOBDOTS
 setopt EXTENDEDGLOB
 
-# remove empty globbings from argument list
-setopt NULL_GLOB
-
 # no clobbing
 setopt NO_CLOBBER
 
@@ -40,7 +37,7 @@ setopt CORRECT
 
 # Homebrew
 if which brew > /dev/null 2>&1; then
-  export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/opt/ruby/bin:/usr/local/sharepython:/usr/local/share/npm/bin:$PATH
+  export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/sharepython:/usr/local/share/npm/bin:$PATH
 fi
 
 export EDITOR=nano
