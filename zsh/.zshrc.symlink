@@ -41,3 +41,6 @@ if which brew > /dev/null 2>&1; then
 fi
 
 export EDITOR=nano
+
+fpath=(~/.dotfiles/zsh/completions $fpath)
+
