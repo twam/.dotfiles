@@ -21,3 +21,5 @@ DerivedData
 # Tempfiles
 *~
 
+# SVN
+.svn
