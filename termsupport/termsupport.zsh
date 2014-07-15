@@ -14,8 +14,10 @@ function title {
   fi
 }
 
-ZSH_THEME_TERM_TAB_TITLE_IDLE="%15<..<%~%<<" #15 char left truncated PWD
-ZSH_THEME_TERM_TAB_TITLE_SSH_IDLE="%15<..<%~%<<" #15 char left truncated PWD
+ZSH_THEME_TERM_TAB_TITLE_IDLE="%3(c:.../:)%2c"      # path truncated to 2 levels
+ZSH_THEME_TERM_TAB_TITLE_SSH_IDLE="%3(c:.../:)%2c" # path truncated to 2 levels
+#ZSH_THEME_TERM_TAB_TITLE_IDLE="%15<..<%~%<<" #15 char left truncated PWD
+#ZSH_THEME_TERM_TAB_TITLE_SSH_IDLE="%15<..<%~%<<" #15 char left truncated PWD
 ZSH_THEME_TERM_TITLE_IDLE="%~"
 ZSH_THEME_TERM_TITLE_SSH_IDLE="%n@%m: %~"
 
@@ -39,4 +41,3 @@ function omz_termsupport_preexec {
 autoload -U add-zsh-hook
 add-zsh-hook precmd  omz_termsupport_precmd
 add-zsh-hook preexec omz_termsupport_preexec
-
