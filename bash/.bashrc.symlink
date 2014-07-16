@@ -4,11 +4,9 @@ PS1='\[\e[01;34m\]\w$(__git_ps1 " \[\e[01;36m\]git:(\[\e[01;34m\]%s\[\e[01;36m\]
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
-for config_file in `find $DOTFILES_DIR -type f -name "*.bash"`; do
+for config_file in `find -L $DOTFILES_DIR -type f -name "*.bash"`; do
 	source $config_file
 done
-
-alias subl=~/sublime_text_3/sublime_text
 
 export PROMPT_DIRTRIM=2
 
@@ -50,6 +48,3 @@ export LANG LANGUAGE LC_CTYPE LC_ALL
 HISTCONTROL=ignoreboth
 HISTFILESIZE=10000
 HISTSIZE=10000
-
-# if [ "$UNAME" = Darwin ]; then
-# fi
