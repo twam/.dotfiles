@@ -3,7 +3,6 @@
 
 [core]
   excludesfile = ~/.gitignore
-  editor       = /usr/bin/nano
 
 [alias]
 
