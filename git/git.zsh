@@ -20,7 +20,7 @@ ZSH_THEME_GIT_PROMPT_STAGED=" ● "
 ZSH_THEME_GIT_PROMPT_CLEAN=" "
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$ZSH_THEME_GIT_PROMPT_COLOR%}git:("
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$ZSH_THEME_GIT_PROMPT_COLOR%})%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$ZSH_THEME_GIT_PROMPT_COLOR%})%{$reset_color%} "
 
 # Name of the current branch
 function git_current_branch() {
