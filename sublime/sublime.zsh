@@ -1,6 +1,5 @@
 # Search for Sublime on OS X
 if [[ "$OSTYPE" =~ "^darwin" ]]; then
-
 if [[ -x /Applications/Sublime\ Text.app ]]
 then
   SUBLIME_EXE=/Applications/Sublime\\\ Text.app/Contents/SharedSupport/bin/subl
@@ -16,6 +15,8 @@ then
   SUBLIME_EXE=~/sublime_text_3/sublime_text
 fi
 
+fi
+
 if [[ ! -z "$SUBLIME_EXE" ]]
 then
 	export EDITOR="$SUBLIME_EXE --wait"
@@ -24,4 +25,3 @@ then
 	alias subl=$SUBLIME_EXE
 fi
 
-fi
