@@ -16,6 +16,8 @@ then
   SUBLIME_EXE=~/sublime_text_3/sublime_text
 fi
 
+fi
+
 if [[ ! -z "$SUBLIME_EXE" ]]
 then
 	export EDITOR="$SUBLIME_EXE --wait"
@@ -24,4 +26,3 @@ then
 	alias subl=$SUBLIME_EXE
 fi
 
-fi

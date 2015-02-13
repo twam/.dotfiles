@@ -1,6 +1,9 @@
 case "$TERM" in
 xterm*|rxvt*)
-	PWDSHORT=`echo "$PWD" | sed -r 's|^.+(/[^/]*/[^/]*)$|...\1|'`
+	echo "test" | sed -r 's|test||' > /dev/null 2>&1
+	if [ $? -eq 0 ]; then
+		PWDSHORT=`echo "$PWD" | sed -r 's|^.+(/[^/]*/[^/]*)$|...\1|'`
+	fi
 
     if [[ -z $PROMPT_COMMAND ]]; then
     	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
