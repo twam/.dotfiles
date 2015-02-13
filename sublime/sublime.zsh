@@ -1,5 +1,5 @@
 # Search for Sublime on OS X
-if [[ "$OSTYPE" =~ "^darwin" ]]; then
+if [[ "$OSTYPE" =~ ^darwin ]]; then
 
 if [[ -x /Applications/Sublime\ Text.app ]]
 then
@@ -9,7 +9,7 @@ fi
 fi
 
 # Search for Sublime on Linux
-if [[ "$OSTYPE" =~ "^linux" ]]; then
+if [[ "$OSTYPE" =~ ^linux ]]; then
 
 if [[ -x ~/sublime_text_3/sublime_text ]]
 then
