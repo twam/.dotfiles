@@ -1,6 +1,10 @@
 DOTFILES_DIR=$HOME/.dotfiles
 
+if [ -n "$SSH_CLIENT" ]; then
+PS1='\[\e[01;32m\]\h \[\e[01;34m\]\w$(__git_ps1 " \[\e[01;36m\]git:(\[\e[01;34m\]%s\[\e[01;36m\])")\[\e[00m\] '
+else
 PS1='\[\e[01;34m\]\w$(__git_ps1 " \[\e[01;36m\]git:(\[\e[01;34m\]%s\[\e[01;36m\])")\[\e[00m\] '
+fi
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
