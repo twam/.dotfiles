@@ -1,8 +1,3 @@
-
-# Pressing up/down will search the history
-#bindkey '^[[A' up-line-or-search
-#bindkey '^[[B' down-line-or-search
-
 # Make the delete key (or Fn + Delete on the Mac) work instead of outputting a ~
 bindkey '^?' backward-delete-char
 bindkey "^[[3~" delete-char
@@ -13,10 +8,14 @@ bindkey "\e[3~" delete-char
 bindkey "^[[1~" beginning-of-line	# home on OS X (with custom terminal settings)
 bindkey "^[[1;5D" beginning-of-line 	# ctrl+left on linux
 bindkey "^[OH" beginning-of-line 	# home on linux
+bindkey "\e[H" beginning-of-line	# home on cygwin mintty
+bindkey "\e[1~": beginning-of-line
 
 bindkey "^[[4~" end-of-line		# end on OS X (with custom terminal settings)
 bindkey "^[OF" end-of-line		# end on linux
 bindkey "^[[1;5C" end-of-line		# ctrl+right on linux
+bindkey "\e[F" end-of-line 		    # end on cygwin mintty
+bindkey "\e[4~": end-of-line
 
 bindkey "^[[A" up-line-or-history
 bindkey "^[[B" down-line-or-history
