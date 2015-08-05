@@ -15,19 +15,28 @@ if [[ ! -z "$SUBLIME_SETTINGS" ]]; then
 
 mkdir -p $SUBLIME_SETTINGS
 
-find . -regextype sed -regex ".*\.sublime-\(keymap\|settings\)" -print0 | while read -d $'\0' file
-do
+OIFS="$IFS"
+IFS=$'\n'
+
+symlinks=$(find sublime -regextype sed -regex ".*\.sublime-\(keymap\|settings\)")
+
+overwrite_all=false
+backup_all=false
+
+for file in $symlinks; do
     overwrite=false
     backup=false
 
-    target="$SUBLIME_SETTINGS/$file"
+    FILENAME=`echo $file | sed "s/^sublime\///"`
+
+    target="$SUBLIME_SETTINGS/$FILENAME"
 
     if [ -e "$target" ] || [ -h "$target" ]; then
         if ! $overwrite_all && ! $backup_all; then
             while true; do
                 echo "$target already exists"
                 echo "[s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all "
-                read answer
+                IFS="$OIFS" read answer
                 case $answer in
                     "s" ) continue 2;; # continue the outer for loop
                     "S" ) break 2;;    # break out of the outer for loop
@@ -35,7 +44,8 @@ do
                     "O" ) overwrite_all=true; break;;
                     "b" ) backup=true; break;;
                     "B" ) backup_all=true; break;;
-                    *   ) continue ;;
+                    *   ) echo "'$answer'";
+                    	 continue ;;
                 esac
             done
         fi
@@ -45,13 +55,15 @@ do
         fi
 
         if $backup || $backup_all; then
-            mv $target "$HOME/$file.backup"
+            mv $target "$SUBLIME_SETTINGS/$FILENAME.backup"
         fi
     fi
 
-    echo "Installing $target"
-    ln -s "$PWD/$file" "$target"
+    echo "Installing $PWD/$FILENAME to $target"
+    ln -s "$PWD/$FILENAME" "$target"
 
 done
+
+IFS="$OIFS"
 
 fi

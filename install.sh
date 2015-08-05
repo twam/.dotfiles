@@ -55,4 +55,8 @@ done
 
 set -e
 
-find . -name "*.install" | while read installer ; do sh -c "${installer}" ; done
+installs=$(find . -name "*.install")
+
+for installer in $installs; do
+sh -c "${installer}"
+done
