@@ -58,4 +58,9 @@ function trash() {
   IFS=$temp_ifs
 }
 
+# lsusb replacement
+function lsusb() {
+  system_profiler SPUSBDataType
+}
+
 fi
