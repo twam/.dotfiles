@@ -1,0 +1,20 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"BracketHighlighter",
+		"Clang Format",
+		"CTags",
+		"Modific",
+		"Package Control",
+		"ProjectSpecific",
+		"TrailingSpaces"
+	],
+	"repositories":
+	[
+		"https://bitbucket.org/klorenz/projectspecific"
+	]
+}
