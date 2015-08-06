@@ -22,7 +22,7 @@ mkdir -p $SUBLIME_SETTINGS
 OIFS="$IFS"
 IFS=$'\n'
 
-symlinks=$(find sublime -regextype sed -regex ".*\.sublime-\(keymap\|settings\)")
+symlinks=$(find -E sublime -regex ".*\.sublime-(keymap|settings)")
 
 overwrite_all=false
 backup_all=false
@@ -64,7 +64,7 @@ for file in $symlinks; do
     fi
 
     echo "Installing $PWD/$FILENAME to $target"
-    ln -s "$PWD/$FILENAME" "$target"
+    ln -s "$PWD/sublime/$FILENAME" "$target"
 
 done
 
