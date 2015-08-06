@@ -8,6 +8,16 @@ fi
 
 fi
 
+# Search for Sublime on Windows
+if [[ "$OSTYPE" =~ ^cygwin ]]; then
+
+#if [[ -x /Applications/Sublime\ Text.app ]]
+#then
+#  SUBLIME_EXE=/Applications/Sublime\\\ Text.app/Contents/SharedSupport/bin/subl
+#fi
+
+fi
+
 # Search for Sublime on Linux
 if [[ "$OSTYPE" =~ ^linux ]]; then
 

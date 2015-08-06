@@ -6,6 +6,10 @@ if [[ "$OSTYPE" =~ ^linux ]]; then
   SUBLIME_SETTINGS=~/.config/sublime-text-3
 fi
 
+if [[ "$OSTYPE" =~ ^cygwin ]]; then
+  SUBLIME_SETTINGS="$APPDATA/Sublime Text 3"
+fi
+
 if [[ "$OSTYPE" =~ ^darwin ]]; then
   SUBLIME_SETTINGS=~/Library/Application\ Support/Sublime\ Text\ 3
 fi
