@@ -6,9 +6,10 @@ if [[ "$OSTYPE" =~ ^linux ]]; then
   SUBLIME_SETTINGS=~/.config/sublime-text-3
 fi
 
-if [[ "$OSTYPE" =~ ^cygwin ]]; then
-  SUBLIME_SETTINGS="$APPDATA/Sublime Text 3"
-fi
+# skip this as symlinks seems problematic ;)
+#if [[ "$OSTYPE" =~ ^cygwin ]]; then
+#  SUBLIME_SETTINGS="$APPDATA/Sublime Text 3"
+#fi
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
   SUBLIME_SETTINGS=~/Library/Application\ Support/Sublime\ Text\ 3
@@ -22,7 +23,11 @@ mkdir -p $SUBLIME_SETTINGS
 OIFS="$IFS"
 IFS=$'\n'
 
+if [[ "$OSTYPE" =~ ^darwin ]]; then
 symlinks=$(find -E sublime -regex ".*\.sublime-(keymap|settings)")
+else
+symlinks=$(find sublime -regextype sed -regex ".*\.sublime-\(keymap\|settings\)")
+fi
 
 overwrite_all=false
 backup_all=false

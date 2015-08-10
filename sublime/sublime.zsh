@@ -11,10 +11,10 @@ fi
 # Search for Sublime on Windows
 if [[ "$OSTYPE" =~ ^cygwin ]]; then
 
-#if [[ -x /Applications/Sublime\ Text.app ]]
-#then
-#  SUBLIME_EXE=/Applications/Sublime\\\ Text.app/Contents/SharedSupport/bin/subl
-#fi
+if [[ -x C:/Programme/Sublime\ Text\ 3/subl.exe ]]
+then
+  SUBLIME_EXE=C:/Programme/Sublime\\\ Text\\\ 3/subl.exe
+fi
 
 fi
 
