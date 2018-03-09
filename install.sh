@@ -2,11 +2,11 @@
 #
 # Modeled after https://github.com/holman/dotfiles/blob/master/Rakefile
 
-GIT_VERSION_A=`git --version | sed -e 's/git version \([0-9]\+\)\.\([0-9]\+\)\.\([0-9]\+\).*/\1/'`
-GIT_VERSION_B=`git --version | sed -e 's/git version \([0-9]\+\)\.\([0-9]\+\)\.\([0-9]\+\).*/\2/'`
-GIT_VERSION_C=`git --version | sed -e 's/git version \([0-9]\+\)\.\([0-9]\+\)\.\([0-9]\+\).*/\3/'`
+GIT_VERSION_A=$(git --version | sed -e 's/git version \([0-9]*\)\.\([0-9]*\)\.\([0-9]*\).*/\1/')
+GIT_VERSION_B=$(git --version | sed -e 's/git version \([0-9]*\)\.\([0-9]*\)\.\([0-9]*\).*/\2/')
+GIT_VERSION_C=$(git --version | sed -e 's/git version \([0-9]*\)\.\([0-9]*\)\.\([0-9]*\).*/\3/')
 
-if [ "$GIT_VERSION_A" -le "1" -a $GIT_VERSION_B -le "7" -a "$GIT_VERSION_C" -lt "10" ]; then
+if [ "$GIT_VERSION_A" -le "1" ] && [ "$GIT_VERSION_B" -le "7" ] && [ "$GIT_VERSION_C" -lt "10" ]; then
     echo "Warning: You need at least git version 1.7.10 to support include.path!"
 fi
 
@@ -19,7 +19,7 @@ for file in $symlinks; do
     overwrite=false
     backup=false
 
-    basename=$(basename $file .symlink)
+    basename=$(basename "$file" .symlink)
     target="$HOME/$basename"
 
     if [ -e "$target" ] || [ -h "$target" ]; then
@@ -27,7 +27,7 @@ for file in $symlinks; do
             while true; do
                 echo "$target already exists"
                 echo "[s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all "
-                read answer
+                read -r answer
                 case $answer in
                     "s" ) continue 2;; # continue the outer for loop
                     "S" ) break 2;;    # break out of the outer for loop
@@ -41,11 +41,11 @@ for file in $symlinks; do
         fi
 
         if $overwrite || $overwrite_all; then
-            rm $target
+            rm "$target"
         fi
 
         if $backup || $backup_all; then
-            mv $target "$HOME/$basename.backup"
+            mv "$target" "$HOME/$basename.backup"
         fi
     fi
 
