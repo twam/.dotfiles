@@ -1,21 +1,22 @@
 [include]
-  path = .dotfiles/secret/.gitconfig
-
+	path = .dotfiles/secret/.gitconfig
 [core]
-  excludesfile = ~/.gitignore
-
+	excludesfile = ~/.gitignore
 [alias]
-
 [color]
-  branch = auto
-  diff   = auto
-  status = auto
-  interactive = auto
-  ui     = true
-
+	branch = auto
+	diff = auto
+	status = auto
+	interactive = auto
+	ui = true
 [push]
-  default = current
-
+	default = current
 [branch "master"]
-  remote = origin
-  merge  = refs/heads/master
+	remote = origin
+	merge = refs/heads/master
+[diff]
+	submodule = log
+[difftool]
+	prompt = false
+[status]
+	submoduleSummary = true
