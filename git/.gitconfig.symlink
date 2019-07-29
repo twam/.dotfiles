@@ -20,3 +20,5 @@
 	prompt = false
 [status]
 	submoduleSummary = true
+[submodule]
+	recurse = true
