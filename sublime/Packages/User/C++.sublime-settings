@@ -1,5 +1,10 @@
 {
-  "translateTabsToSpaces": true,
-  "tabSize": 2,
-  "ensure_newline_at_eof_on_save": true,
+	"ensure_newline_at_eof_on_save": true,
+	"extensions":
+	[
+		"h",
+		"ino"
+	],
+	"tabSize": 2,
+	"translateTabsToSpaces": true
 }
