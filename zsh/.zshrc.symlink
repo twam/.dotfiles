@@ -51,11 +51,8 @@ DISABLE_AUTO_UPDATE="true"
 ZSH_CUSTOM=$HOME/.dotfiles/zsh/oh-my-zsh-custom
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(gitfast zsh-autosuggestions zsh-syntax-highlighting sublime)
 
 source $ZSH/oh-my-zsh.sh
 
