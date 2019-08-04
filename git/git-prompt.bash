@@ -71,8 +71,8 @@
 # is SP.
 #
 # By default, __git_ps1 will compare HEAD to your SVN upstream if it can
-# find one, or @{upstream} otherwise.  Once you have set
-# GIT_PS1_SHOWUPSTREAM, you can override it on a per-repository basis by
+# find one, or @ otherwise.  Once you have set
+# GIT_PS1_SHOWUPSTREAM, you{upstream} can override it on a per-repository basis by
 # setting the bash.showUpstream config variable.
 #
 # If you would like to see more information about the identity of
@@ -210,11 +210,11 @@ __git_ps1_show_upstream ()
 		"0	0") # equal to upstream
 			p=" u=" ;;
 		"0	"*) # ahead of upstream
-			p=" u+${count#0	}" ;;
+			p=" u↑${count#0	}" ;;
 		*"	0") # behind upstream
-			p=" u-${count%	0}" ;;
+			p=" u↓${count%	0}" ;;
 		*)	    # diverged from upstream
-			p=" u+${count#*	}-${count%	*}" ;;
+			p=" u↑${count#*	}↓$%{count%	*}" ;;
 		esac
 		if [[ -n "$count" && -n "$name" ]]; then
 			__git_ps1_upstream_name=$(git rev-parse \
