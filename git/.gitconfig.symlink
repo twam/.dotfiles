@@ -22,3 +22,5 @@
 	submoduleSummary = true
 [submodule]
 	recurse = true
+[fetch]
+	prune = true
