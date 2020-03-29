@@ -1,4 +1,5 @@
 {
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
@@ -7,7 +8,7 @@
 		"Alignment",
 		"BracketHighlighter",
 		"Clang Format",
-		"CTags",
+		"HexViewer",
 		"Modific",
 		"Package Control",
 		"ProjectSpecific",

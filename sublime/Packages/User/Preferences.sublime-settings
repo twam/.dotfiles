@@ -1,6 +1,12 @@
 {
+	"added_words":
+	[
+		"Smartphone",
+		"smartphone"
+	],
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"dictionary": "Packages/Language - English/en_US.dic",
 	"draw_white_space": "selection",
 	"file_exclude_patterns":
 	[
@@ -18,9 +24,12 @@
 	],
 	"rulers":
 	[
-		80
+		80,
+		120
 	],
 	"show_encoding": true,
 	"show_full_path": false,
-	"tab_completion": false
+	"spell_check": true,
+	"tab_completion": false,
+	"theme": "Default.sublime-theme"
 }

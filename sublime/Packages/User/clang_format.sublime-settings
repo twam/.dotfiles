@@ -1,3 +1,4 @@
 {
-    "style": "File",
+	"format_on_save": true,
+	"style": "File",
 }
