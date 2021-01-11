@@ -10,6 +10,7 @@ export LC_ALL=en_US.UTF-8
 # Homebrew
 if which brew > /dev/null 2>&1; then
   export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/sharepython:/usr/local/share/npm/bin:$PATH
+  export HOMEBREW_CASK_OPTS="--no-quarantine"
 fi
 
 function pfd() {
