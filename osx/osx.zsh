@@ -13,6 +13,10 @@ if which brew > /dev/null 2>&1; then
   export HOMEBREW_CASK_OPTS="--no-quarantine"
 fi
 
+if [[ $(uname -m 2> /dev/null) == "arm64" ]]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
+
 function pfd() {
   osascript 2>/dev/null <<EOF
     tell application "Finder"
