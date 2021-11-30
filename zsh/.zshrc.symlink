@@ -75,11 +75,15 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 # zsh-autosuggestions configuration (https://github.com/zsh-users/zsh-autosuggestions)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 
-# Source all zsh config files excluding the plugins directory
+# Source all zsh config files excluding the plugins directory, sorted by 'priority'
 DOTFILES_DIR=$HOME/.dotfiles
 
+config_files_sorted=()
 for config_file ($DOTFILES_DIR/**/*.zsh~($DOTFILES_DIR/zsh/**/*.zsh)(.))
-  source $config_file
+  config_files_sorted+=("0"${${(@s./.)config_file}[-1]}$'\0'$config_file)
+for config_file in ${(@n)config_files_sorted}
+  source ${config_file/*$'\0'/}
+
 
 ### Fix slowness of pastes with zsh-syntax-highlighting.zsh (https://gist.github.com/magicdude4eva/2d4748f8ef3e6bf7b1591964c201c1ab)
 pasteinit() {
