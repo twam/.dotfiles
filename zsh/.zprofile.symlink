@@ -1,9 +1,0 @@
-# Enable globbing for hidden files, advanced globbing
-setopt GLOBDOTS
-setopt EXTENDEDGLOB
-
-# Source all .zprofile config files excluding the plugins directory
-DOTFILES_DIR=$HOME/.dotfiles
-
-for config_file ($DOTFILES_DIR/**/*.zprofile~($DOTFILES_DIR/zsh/**/*.zprofile)(.))
-  source $config_file
