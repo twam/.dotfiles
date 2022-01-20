@@ -80,7 +80,7 @@ DOTFILES_DIR=$HOME/.dotfiles
 
 config_files_sorted=()
 for config_file ($DOTFILES_DIR/**/*.zsh~($DOTFILES_DIR/zsh/**/*.zsh)(.))
-  config_files_sorted+=("0"${${(@s./.)config_file}[-1]}$'\0'$config_file)
+  config_files_sorted+=("0"${config_file:t}$'\0'$config_file)
 for config_file in ${(@n)config_files_sorted}
   source ${config_file/*$'\0'/}
 
