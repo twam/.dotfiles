@@ -24,3 +24,7 @@
 	recurse = true
 [fetch]
 	prune = true
+[http]
+	sslVerify = true
+[pull]
+	ff = only
