@@ -6,3 +6,5 @@
 
 # SVN
 .svn
+
+__pycache__
