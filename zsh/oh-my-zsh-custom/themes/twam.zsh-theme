@@ -1,9 +1,9 @@
 function ssh_prompt() {
-  echo -n "%B%{%(#~%F{red}~%F{green})%}"
+  echo -n "%B%{%(#~%F{red}~%F{green})%}%n"
   if (( ${+SSH_CONNECTION} )); then
-	echo -n "%n@"
+	echo -n "@%m"
   fi
-  echo -n "%m%f%b "
+  echo -n "%f%b "
 }
 
 local git_branch='$(git_prompt_info)$(git_remote_status)'
