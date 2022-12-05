@@ -7,6 +7,9 @@ if [[ "$OSTYPE" -regex-match "^darwin[0-9.]*$" ]] then
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# Enable colors in ls
+export COLORTERM=1
+
 # Homebrew
 if which brew > /dev/null 2>&1; then
   export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/sharepython:/usr/local/share/npm/bin:$PATH
