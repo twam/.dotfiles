@@ -5,17 +5,21 @@
 	],
 	"installed_packages":
 	[
+		"Align Arguments",
 		"Alignment",
+		"AutoPEP8",
 		"BracketHighlighter",
 		"Clang Format",
+		"CMake",
 		"HexViewer",
+		"Markdown Table Formatter",
+		"MarkdownPreview",
 		"Modific",
 		"Package Control",
-		"ProjectSpecific",
-		"TrailingSpaces"
+		"PlantUmlDiagrams",
+		"SublimeLinter",
+		"SublimeLinter-pycodestyle",
+		"TrailingSpaces",
+		"Verilog",
 	],
-	"repositories":
-	[
-		"https://bitbucket.org/klorenz/projectspecific"
-	]
 }

@@ -1,11 +1,13 @@
 {
 	"added_words":
 	[
-		"Smartphone",
-		"smartphone"
+		"Artifactory",
+		"datapoint",
+		"bootloader",
+		"subscribable",
 	],
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"draw_white_space": "selection",
 	"file_exclude_patterns":
@@ -16,11 +18,11 @@
 	],
 	"font_face": "Menlo",
 	"font_options": "subpixel_antialias",
-	"font_size": 11,
+	"font_size": 12,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
 	],
 	"rulers":
 	[
@@ -31,5 +33,8 @@
 	"show_full_path": false,
 	"spell_check": true,
 	"tab_completion": false,
-	"theme": "Default.sublime-theme"
+	"theme": "Default.sublime-theme",
+	"themed_title_bar": false,
+	"caret_style": "smooth",
+	"update_check": true,
 }
