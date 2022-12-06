@@ -12,13 +12,12 @@ fi
 #fi
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
-  SUBLIME_SETTINGS=~/Library/Application\ Support/Sublime\ Text\ 3
+  SUBLIME_SETTINGS=~/Library/Application\ Support/Sublime\ Text
 fi
 
 if [[ ! -z "$SUBLIME_SETTINGS" ]]; then
 
-mkdir -p $SUBLIME_SETTINGS
-mkdir -p $SUBLIME_SETTINGS/Packages
+mkdir -p "$SUBLIME_SETTINGS/Packages"
 ln -s $PWD/sublime/Packages/User "$SUBLIME_SETTINGS/Packages/User"
 
 # OIFS="$IFS"
