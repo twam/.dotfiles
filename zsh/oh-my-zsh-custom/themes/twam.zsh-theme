@@ -1,14 +1,31 @@
-function ssh_prompt() {
-  echo -n "%B%{%(#~%F{red}~%F{green})%}%n"
-  if (( ${+SSH_CONNECTION} )); then
-	echo -n "@%m"
+function _prompt() {
+  test -f /.dockerenv
+  local no_docker=$?
+
+  if [ $no_docker = 1 ]; then
+    # Outside docker, display username in red (root) or green (non-root)
+    echo -n "%B%{%(#~%F{red}~%F{green})%}%n"
+
+    # Show machine name if connected via SSH
+    if (( ${+SSH_CONNECTION} )); then
+  	echo -n "@%m"
+    fi
+    echo -n "%f%b "
   fi
-  echo -n "%f%b "
+
+  if [ $no_docker = 1 ]; then
+    # Outside docker color path blue
+    echo -n "%B%F{blue}"
+  else
+    # Inside docker color path green
+    echo -n "%B%F{green}"
+  fi
+
+  echo -n "%~%f%b"
 }
 
 local git_branch='$(git_prompt_info)$(git_remote_status)'
-
-PROMPT="$(ssh_prompt)%B%F{blue}%~%f%b ${git_branch}"
+PROMPT="$(_prompt) ${git_branch}"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%B%F{cyan}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%f%b "
