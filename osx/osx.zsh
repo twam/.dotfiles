@@ -71,4 +71,6 @@ function lsusb() {
   system_profiler SPUSBDataType
 }
 
+alias approve='xattr -d com.apple.quarantine'
+
 fi
