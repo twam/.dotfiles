@@ -7,7 +7,7 @@ This is inspired by [Robb's .dotfiles](https://github.com/robb/.dotfiles).
 ## Prerequisites
 1. git > 1.7.10
 2. zsh > 4.3.9
-3. OS X: My terminal settings found in `osx/twam.terminal`
+3. macOS: My terminal settings found in `macos/twam.terminal`
 
 ## Installation
 
