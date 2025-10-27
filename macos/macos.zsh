@@ -72,5 +72,6 @@ function lsusb() {
 }
 
 alias approve='xattr -d com.apple.quarantine'
+alias cls="printf '\33c\e[3J'"
 
 fi
