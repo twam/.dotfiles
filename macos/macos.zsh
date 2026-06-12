@@ -14,6 +14,7 @@ export COLORTERM=1
 if which brew > /dev/null 2>&1; then
   export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/sharepython:/usr/local/share/npm/bin:$PATH
   export HOMEBREW_CASK_OPTS="--no-quarantine"
+  export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 fi
 
 if [[ $(uname -m 2> /dev/null) == "arm64" ]]; then
