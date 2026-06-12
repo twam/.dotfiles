@@ -8,3 +8,6 @@
 .svn
 
 __pycache__
+
+# Intellij/Pycharm
+.idea
