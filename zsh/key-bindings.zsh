@@ -24,3 +24,9 @@ bindkey "^[[C" forward-char
 
 bindkey "^[[5~" up-line-or-history
 bindkey "^[[6~" down-line-or-history
+
+# Kitty over SSH
+bindkey "\e[1;3F" beginning-of-line
+bindkey "\e[1;3H" end-of-line
+bindkey "\e[1;3C" forward-word
+bindkey "\e[1;3D" backward-word
